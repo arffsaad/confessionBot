@@ -234,7 +234,7 @@ function checkBot() {
             if (data.ok) {
                 $("#botIndicator").html("<i class='fa fa-check' aria-hidden='true'></i>");
                 $("#botIndicator").css("color", "green");
-                $("#botConnection").html("Bot Connection Success")
+                $("#botConnection").html("Bot Connection Success! Bot name: " + data.result.first_name);
                 checkChannel();
             }},
         error: function (xhr, desc, err) {
@@ -258,7 +258,7 @@ function checkChannel() {
             if (data.ok) {
                 $("#channelIndicator").html("<i class='fa fa-check' aria-hidden='true'></i>");
                 $("#channelIndicator").css("color", "green");
-                $("#channelConnection").html("Channel Connection Success")
+                $("#channelConnection").html("Channel Connection Success! Channel name: " + data.result.title);
                 $("#nextBtn").prop( "disabled", false);
                 $("#finalToken").val(botToken);
                 $("#finalChannel").val(channelName);

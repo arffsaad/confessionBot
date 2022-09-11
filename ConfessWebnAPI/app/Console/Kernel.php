@@ -4,6 +4,12 @@ namespace App\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+// use redis
+use Illuminate\Support\Facades\Redis;
+// use guzzlehttp
+use GuzzleHttp\Client;
+// use telebot controller
+use App\Http\Controllers\TelebotController;
 
 class Kernel extends ConsoleKernel
 {
@@ -15,7 +21,15 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')->hourly();
+        $schedule->call(function () {
+            $reps = 5;
+            for ($i = 0; $i < $reps; $i++) {
+                TelebotController::toBot();
+                // wait 10 secs
+                sleep(5);
+            }
+        })
+        ->everyMinute()->monitorName("AutoSend")->name("AutoSend");
     }
 
     /**

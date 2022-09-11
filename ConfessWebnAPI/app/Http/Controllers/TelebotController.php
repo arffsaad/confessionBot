@@ -9,9 +9,17 @@ use App\Models\User;
 
 class TelebotController extends Controller
 {
-    public function toBot () {
+    public static function toBot () {
         $index = Redis::get('index');
         $read = Redis::get('rindex');
+        if ($read === null) {
+            Redis::set('rindex', 0);
+            $read = 0;
+        }
+        if ($index === null) {
+            Redis::set('index', 0);
+            $index = 0;
+        }
         if ($read != $index){
             $message = Redis::hget("confess:{$read}", 'confession');
             $bot_id = Redis::get('bot_id');
