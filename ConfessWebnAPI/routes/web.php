@@ -18,7 +18,8 @@ Route::post('/setBot', [ConfiguratorController::class, 'setBot']);
 
 Route::get('/', [ConfiguratorController::class, 'index']);
 
-Route::get('/test', [ConfiguratorController::class, 'test']);
+// testing configurator route
+// Route::get('/test', [ConfiguratorController::class, 'test']);
 
 Route::post('/', [ConfessController::class, 'store']);
 
