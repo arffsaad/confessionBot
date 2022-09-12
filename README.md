@@ -42,6 +42,8 @@ Automated Confession poster for Telegram. Anonymous users can send their rants t
     - Ensure redis is running.
     - use `php artisan serve` OR properly host a webserver using nginx
     - open the root webpage, and use the webconfigurator to test connection for the Bot.
+    <img width="850" alt="image" src="https://user-images.githubusercontent.com/80538339/189574983-56ebfa2d-045d-4a0c-a0a6-882e6fff192d.png">
+    
     - API Token has no use yet. Ignore and finish setup.
     
 5. Turn on Laravel Scheduler
