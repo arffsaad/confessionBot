@@ -33,7 +33,8 @@ php artisan db:seed
 php artisan cache:clear
 php artisan route:cache
 php artisan key:generate
-
-chmod -R ugo+rw storage/
+npm install && npm run build
 
 /usr/bin/supervisord -c /etc/supervisord.conf
+
+chmod -R ugo+rw storage/
