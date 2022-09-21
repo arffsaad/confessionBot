@@ -30,7 +30,7 @@ Automated Confession poster for Telegram. Anonymous users can send their rants t
     php artisan key:generate
     php artisan migrate:fresh   # yes if prompted to create database
     php artisan db:seed         # creates a default user with an API Token
-    ```
+    ```    
     
 3. Setup Telegram Channel
     - Create a new (or use existing) channel on Telegram.
@@ -56,6 +56,15 @@ Automated Confession poster for Telegram. Anonymous users can send their rants t
     * * * * * /usr/bin/php /var/www/html/ConfessWebnAPI/artisan schedule:run >> /dev/null 2>&1
     ```
     - press ESC and :wq to exit out of vi
+
+## Dockers? we got you.
+
+1. Ensure docker is installed
+2. run `docker run -d -p 80:80 ghcr.io/arffsaad/confessionbot:main`
+3. Go to `http://localhost`
+4. Perform steps 3 & 4 as stated in normal setup. Step 5 is omitted since scheduler is automatically enabled.
+
+_ For hosting purposes, use a reverse proxy such as nginx. _
 
 ## Proper Usage
 
