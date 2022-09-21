@@ -29,7 +29,7 @@ class Kernel extends ConsoleKernel
                 sleep(5);
             }
         })
-        ->everyMinute();
+        ->everyFiveMinutes();
     }
 
     /**
