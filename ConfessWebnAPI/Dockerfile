@@ -42,8 +42,8 @@ RUN groupadd -g 1000 www
 RUN useradd -u 1000 -ms /bin/bash -g www www
 
 # Copy code to /var/www
-RUN git clone https://github.com/arffsaad/confessionBot
-COPY --chown=www:www-data confessionBot/ConfessWebnAPI/ /var/www
+RUN git clone https://github.com/arffsaad/confessionBot && cd confessionBot
+COPY --chown=www:www-data ConfessWebnAPI/ /var/www
 
 # add root to www group
 RUN chmod -R ug+w /var/www/storage
