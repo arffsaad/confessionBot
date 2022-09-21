@@ -32,5 +32,8 @@ php artisan migrate:fresh
 php artisan db:seed
 php artisan cache:clear
 php artisan route:cache
+php artisan key:generate
+
+chmod -R ugo+rw storage/
 
 /usr/bin/supervisord -c /etc/supervisord.conf
