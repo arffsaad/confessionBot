@@ -42,7 +42,7 @@ RUN groupadd -g 1000 www
 RUN useradd -u 1000 -ms /bin/bash -g www www
 
 # Copy code to /var/www
-RUN git clone https://github.com/arffsaad/confessionBot && cd confessionBot && cp -r ConfessWebnAPI/ /var/www && chown -R www:www-data /var/www/
+RUN git clone https://github.com/arffsaad/confessionBot && cd confessionBot && cp ConfessWebnAPI/* /var/www && chown -R www:www-data /var/www/
 # COPY --chown=www:www-data ConfessWebnAPI/ /var/www
 
 # add root to www group
