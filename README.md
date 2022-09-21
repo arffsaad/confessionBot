@@ -64,7 +64,7 @@ Automated Confession poster for Telegram. Anonymous users can send their rants t
 3. Go to `http://localhost`
 4. Perform steps 3 & 4 as stated in normal setup. Step 5 is omitted since scheduler is automatically enabled.
 
-_ For hosting purposes, use a reverse proxy such as nginx. _
+> For hosting purposes, use a reverse proxy such as nginx
 
 ## Proper Usage
 
