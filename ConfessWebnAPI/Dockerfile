@@ -11,6 +11,9 @@ RUN chmod +x /usr/local/bin/install-php-extensions && sync && \
     install-php-extensions mbstring pdo_mysql zip exif pcntl gd memcached redis
 
 # Install dependencies
+
+RUN curl -sL https://deb.nodesource.com/setup_14.x | bash -
+
 RUN apt-get update && apt-get install -y \
     build-essential \
     libpng-dev \
@@ -26,7 +29,8 @@ RUN apt-get update && apt-get install -y \
     libmemcached-dev \
     nginx \
     redis \
-    git
+    git \
+    nodejs
 
 # Install supervisor
 RUN apt-get install -y supervisor
